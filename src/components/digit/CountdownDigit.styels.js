@@ -1,21 +1,10 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-const FlipAnimation = keyframes`
-0%{
-  opacity: 1;
-  transform: rotateY(0);
-}
-
-50% {
-  opacity: 0.5;
-  transform: rotateX(90deg);
-}
-
-100% {
-  opacity: 1;
-  transform: rotateX(0deg);
-}
+const FlipTop = keyframes`
+ 100% {
+    transform: rotateX(90deg);
+  }
 `;
 
 export const Container = styled.div`
@@ -23,15 +12,19 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.darkDesaturatedBlue};
   border-radius: 1rem;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const Digit = styled.p`
-  prespective: 2000px;
+export const Digit = styled.div`
   color: ${(props) => props.theme.softRed};
   font-size: 8rem;
-
-  // animation: ${FlipAnimation} 1s infinite;
 `;
+
+export const Top = styled.div``;
+
+export const Bottom = styled.div``;
 
 export const Break = styled.div`
   height: 1px;
@@ -43,7 +36,7 @@ export const Break = styled.div`
   background-color: ${(props) => props.theme.veryDarkBlue};
 `;
 
-export const Left = styled.span`
+export const LeftHole = styled.span`
   display: inline-block;
   background-color: ${(props) => props.theme.veryDarkBlue};
   width: 1.5rem;
@@ -56,7 +49,7 @@ export const Left = styled.span`
   transform: translate(-50%, -50%);
 `;
 
-export const Right = styled.span`
+export const RightHole = styled.span`
   display: inline-block;
   background-color: ${(props) => props.theme.veryDarkBlue};
   width: 1.5rem;

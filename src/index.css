@@ -25,3 +25,54 @@ body {
   color: hsl(235, 16%, 14%);
   color: hsl(234, 17%, 12%);
 }
+
+.flip-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.top,
+.bottom,
+.flip-card.flip::before,
+.flip-card.flip::after {
+  height: 0.75em;
+  line-height: 1;
+  padding: 0.25em;
+  overflow: hidden;
+}
+
+.bottom,
+.flip-card.flip::after {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flip-card.flip::before {
+  content: attr(data-count);
+  position: absolute;
+  text-align: center;
+  animation: flip-top 1s ease-in infinite;
+  transform-origin: bottom;
+}
+
+.flip-card.flip::after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  animation: flip-bottom 1s ease-out 1s infinite;
+  transform-origin: bottom;
+}
+
+@keyframes flip-top {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  100% {
+    transform: rotateX(90deg);
+  }
+}

@@ -1,13 +1,24 @@
 import React from "react";
 
-import { Container, Digit, Break, Left, Right } from "./CountdownDigit.styels";
+import {
+  Container,
+  Digit,
+  Break,
+  LeftHole,
+  RightHole,
+  Top,
+  Bottom,
+} from "./CountdownDigit.styels";
 
 const CountdownDigit = ({ digit }) => {
   return (
     <Container>
-      <Left />
-      <Right></Right>
-      <Digit>{digit}</Digit>
+      <LeftHole />
+      <RightHole />
+      <Digit className="flip-card flip" data-count={digit}>
+        <Top className="top">{digit}</Top>
+        <Bottom className="bottom">{digit}</Bottom>
+      </Digit>
       <Break />
     </Container>
   );
