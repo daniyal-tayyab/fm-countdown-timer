@@ -42,10 +42,10 @@ const Countdown = () => {
 
   return (
     <Container>
-      <CountdownDigit digit={day} />
-      <CountdownDigit digit={hours} />
-      <CountdownDigit digit={minutes} />
-      <CountdownDigit digit={seconds} />
+      <CountdownDigit digit={`0${day}`} title="Days" />
+      <CountdownDigit digit={`0${hours}`} title="Hours" />
+      <CountdownDigit digit={minutes} title="Minutes" />
+      <CountdownDigit digit={seconds} title="Seconds" />
     </Container>
   );
 };

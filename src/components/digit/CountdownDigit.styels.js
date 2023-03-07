@@ -7,6 +7,19 @@ const FlipTop = keyframes`
   }
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  p {
+    text-align: center;
+    margin-top: 2rem;
+    color: ${(props) => props.theme.grayishBlue};
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+`;
+
 export const Container = styled.div`
   padding: 2rem 3em;
   background-color: ${(props) => props.theme.darkDesaturatedBlue};

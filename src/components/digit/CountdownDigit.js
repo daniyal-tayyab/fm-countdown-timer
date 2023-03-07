@@ -8,19 +8,23 @@ import {
   RightHole,
   Top,
   Bottom,
+  Wrapper,
 } from "./CountdownDigit.styels";
 
-const CountdownDigit = ({ digit }) => {
+const CountdownDigit = ({ digit, title }) => {
   return (
-    <Container>
-      <LeftHole />
-      <RightHole />
-      <Digit className="flip-card" data-count={digit}>
-        <Top className="top">{digit}</Top>
-        <Bottom className="bottom">{digit}</Bottom>
-      </Digit>
-      <Break />
-    </Container>
+    <Wrapper>
+      <Container>
+        <LeftHole />
+        <RightHole />
+        <Digit className="flip-card" data-count={digit}>
+          <Top className="top">{digit}</Top>
+          <Bottom className="bottom">{digit}</Bottom>
+        </Digit>
+        <Break />
+      </Container>
+      <p>{title}</p>
+    </Wrapper>
   );
 };
 
