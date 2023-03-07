@@ -1,11 +1,4 @@
 import styled from "styled-components";
-import { keyframes } from "styled-components";
-
-const FlipTop = keyframes`
- 100% {
-    transform: rotateX(90deg);
-  }
-`;
 
 export const Wrapper = styled.div`
   display: flex;
