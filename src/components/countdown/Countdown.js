@@ -11,32 +11,34 @@ const Countdown = () => {
 
   useEffect(() => {
     const countdownDate = getCountdownDate();
+    console.log("date: ", new Date(countdownDate));
 
-    let interval = setInterval(() => {
-      const countdownduration = getCountDownDuration(countdownDate);
+    setInterval(() => {
+      const countdownDuration = getCountDownDuration(countdownDate);
+      console.log("duration: ", countdownDuration);
 
-      setDay(Math.floor(countdownduration / (1000 * 60 * 60 * 24)));
+      setDay(Math.floor(countdownDuration / (1000 * 60 * 60 * 24)));
       setHours(
         Math.floor(
-          (countdownduration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (countdownDuration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         )
       );
       setMinutes(
-        Math.floor((countdownduration % (1000 * 60 * 60)) / (1000 * 60))
+        Math.floor((countdownDuration % (1000 * 60 * 60)) / (1000 * 60))
       );
-      setSeconds(Math.floor((countdownduration % (1000 * 60)) / 1000));
+      setSeconds(Math.floor((countdownDuration % (1000 * 60)) / 1000));
     }, 1000);
-
-    return clearInterval(interval);
   }, []);
 
   const getCountdownDate = () => {
-    const day = new Date().getDay() + 1;
-    return new Date(`Mar ${day}, 2024 15:37:25`).getTime();
+    const day = new Date().getDay() + 10;
+    return new Date(`Mar ${day}, 2023 15:37:25`).getTime();
   };
 
-  const getCountDownDuration = (countdownDate) =>
-    countdownDate - new Date().getTime();
+  const getCountDownDuration = (countdownDate) => {
+    const currentTime = new Date().getTime();
+    return countdownDate - currentTime;
+  };
 
   return (
     <Container>
