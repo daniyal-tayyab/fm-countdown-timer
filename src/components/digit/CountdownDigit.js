@@ -15,7 +15,7 @@ const CountdownDigit = ({ digit }) => {
     <Container>
       <LeftHole />
       <RightHole />
-      <Digit className="flip-card flip" data-count={digit}>
+      <Digit className="flip-card" data-count={digit}>
         <Top className="top">{digit}</Top>
         <Bottom className="bottom">{digit}</Bottom>
       </Digit>

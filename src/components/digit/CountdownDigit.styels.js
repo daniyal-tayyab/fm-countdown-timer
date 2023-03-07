@@ -20,6 +20,26 @@ export const Container = styled.div`
 export const Digit = styled.div`
   color: ${(props) => props.theme.softRed};
   font-size: 8rem;
+
+  @media (max-width: 680px) {
+    font-size: 6rem;
+  }
+
+  @media (max-width: 530px) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: 490px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 3rem;
+  }
 `;
 
 export const Top = styled.div``;
@@ -47,6 +67,11 @@ export const LeftHole = styled.span`
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 600px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
 
 export const RightHole = styled.span`
@@ -60,4 +85,9 @@ export const RightHole = styled.span`
   top: 50%;
   left: 100%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 600px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
