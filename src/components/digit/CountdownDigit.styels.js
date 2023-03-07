@@ -17,6 +17,10 @@ export const Wrapper = styled.div`
     color: ${(props) => props.theme.grayishBlue};
     font-size: 1.5rem;
     letter-spacing: 2px;
+
+    @meida (max-width: 600px) {
+      font-size: 12px;
+    }
   }
 `;
 
